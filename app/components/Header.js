@@ -1,9 +1,8 @@
 "use client"; // This line makes this component a Client Component
 
-import { useState } from 'react';
-import './header.css';
+import { useState } from "react";
+import "./header.css";
 import { FaCode } from "react-icons/fa6";
-
 
 export default function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,7 +11,6 @@ export default function Header() {
 
   const IconComponent = FaCode;
 
-
   return (
     <header className="bg-gray-900 text-white p-4">
       <nav className="container mx-auto flex items-center justify-between relative">
@@ -20,7 +18,9 @@ export default function Header() {
           <span className="text-teal-500 text-4xl">
             <IconComponent />
           </span>
-          <span className='text-2xl bg-gradient-to-r from-teal-500 via-gray-300 to-pink-600 bg-clip-text text-transparent'>Developer Numan</span>
+          <span className="text-2xl bg-gradient-to-r from-teal-500 via-gray-300 to-pink-600 bg-clip-text text-transparent">
+            Developer Numan
+          </span>
         </div>
         {/* <button
           className="md:hidden flex items-center z-50"
