@@ -130,7 +130,7 @@ export default function Footer() {
         <div className="flex justify-end m-0">
           <button
             onClick={scrollToTop}
-            className="mt-0 mr-10 flex items-end justify-end bg-teal-600 text-white p-2 rounded-full hover:bg-teal-500 transition-all duration-300"
+            className="mt-0 mr-2 md:mr-10 flex items-end justify-end bg-teal-600 text-white p-2 rounded-full hover:bg-teal-500 transition-all duration-300"
             aria-label="Scroll to top"
           >
             <FaArrowUp className="w-5 h-5" />
