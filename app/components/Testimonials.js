@@ -110,21 +110,21 @@ export default function Testimonials() {
       role: "CEO at Company",
       testimonial:
         "Numan's work exceeded our expectations. His expertise played a key role in our project's success.",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
+      image: "/img_2.jpg",
     },
     {
       name: "Jane Smith",
       role: "Marketing Manager",
       testimonial:
         "Working with Numan was a fantastic experience. He was professional, communicative, and delivered everything on time.",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      image: "/img_1.jpg",
     },
     {
       name: "Samuel Green",
       role: "Product Designer",
       testimonial:
         "Numan is an incredibly skilled developer. I highly recommend him for any project needing precision and creativity.",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
+      image: "/img_3.jpg",
     },
   ];
 
