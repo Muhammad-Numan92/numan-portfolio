@@ -36,9 +36,9 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-gray-900">
         <Header />
-        <main>{children}</main>
+        <main className="bg-gray-900">{children}</main>
         <Footer />
         <ToastContainer position="top-right" autoClose={3000} theme="dark" />
       </body>
