@@ -29,7 +29,7 @@ export default function ProfileCard() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 px-4 py-8">
       <div className="text-center">
         <Image
-          src="/numan_pic.png"
+          src="/circleImage.png"
           alt="Profile"
           width={210}
           height={210}
