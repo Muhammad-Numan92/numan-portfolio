@@ -17,13 +17,13 @@ export default function Services() {
       icon: FaCode,
       title: "Web Development",
       description:
-        "I build secure and scalable web applications using Laravel, MySQL, and modern frontend frameworks like React.js and Next.js. From authentication systems to RESTful APIs, I ensure clean architecture and full-stack functionality.",
+        "I build secure and scalable web applications using Laravel, MySQL, and modern frontend frameworks like Vue.js and Next.js. From authentication systems to RESTful APIs, I ensure clean architecture and full-stack functionality.",
     },
     {
       icon: HiOutlineDesktopComputer,
       title: "Responsive Frontend Design",
       description:
-        "I design responsive, mobile-first interfaces using Tailwind CSS, HTML, and JavaScript. Your application will look great and function seamlessly across all devices with component-based UI and optimized styling.",
+        "I design responsive, mobile-first interfaces using Vue.js, Tailwind CSS, HTML, and JavaScript. Your application will look great and function seamlessly across all devices with component-based UI and optimized styling.",
     },
     {
       icon: HiOutlineShoppingBag,

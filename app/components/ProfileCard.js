@@ -11,15 +11,15 @@ export default function ProfileCard() {
   // Array of texts to be displayed
   const texts = [
     "Software Engineer",
-    "Laravel Developer",
     "Full Stack Developer",
+    "Laravel & Vue.js Developer",
   ];
 
   useEffect(() => {
     // Interval to change text every 2 seconds
     const intervalId = setInterval(() => {
       setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 2000); // Adjust the duration here (milliseconds) for text change speed
+    }, 2500);
 
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
@@ -40,14 +40,14 @@ export default function ProfileCard() {
           Muhammad Numan
         </h1>
 
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-100 mb-8 animate-slideIn">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-100 mb-8 animate-slideIn ease-in-out">
           {texts[currentTextIndex]}
         </h2>
         <p className="text-gray-100 text-base md:text-lg lg:text-xl max-w-xl mx-auto">
           I turn ideas into web reality. Experienced in both{" "}
-          <span className="text-teal-500">front-end</span> and{" "}
-          <span className="text-teal-500">back-end</span> development, I craft
-          elegant user interfaces and scalable server-side solutions.
+          <span className="text-teal-500">back-end</span> and{" "}
+          <span className="text-teal-500">front-end</span> development, I craft
+          scalable server-side solutions and elegant user interfaces.
         </p>
       </div>
     </div>

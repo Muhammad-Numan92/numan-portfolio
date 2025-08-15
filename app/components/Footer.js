@@ -92,7 +92,7 @@ export default function Footer() {
             <span className="text-lg">GitHub</span>
           </a>
           <a
-            href="https://linkedin.com/in/muhammad-numan-618a24241/"
+            href="https://www.linkedin.com/in/muhammad-numan-full-stack-dev/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-teal-500 flex items-center space-x-2 transition-transform transform hover:scale-110"
