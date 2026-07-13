@@ -1,17 +1,56 @@
-"use client"; // This line makes this component a Client Component
+"use client";
 
-// app/components/ServiceCard.js
+import { ArrowUpRight } from "lucide-react";
 
 export default function ServiceCard({ icon, title, description }) {
-  const IconComponent = icon;
+  const Icon = icon;
 
   return (
-    <div className="bg-gray-900 rounded-lg border border-gray-700 shadow-lg p-6 text-left transition-all duration-300 hover:border-teal-500 hover:shadow-lg hover:shadow-teal-500/50">
-      <div className="text-teal-500 text-4xl mb-4">
-        <IconComponent />
+    <div
+      className="
+      group
+      relative
+      overflow-hidden
+      rounded-3xl
+      border
+      border-white/10
+      bg-white/[0.03]
+      p-8
+      backdrop-blur-xl
+      transition-all
+      duration-500
+      hover:-translate-y-3
+      hover:border-teal-400/40
+      hover:shadow-[0_20px_60px_rgba(20,184,166,.15)]
+      "
+    >
+      {/* Glow */}
+
+      <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-teal-500/10 blur-3xl opacity-0 transition group-hover:opacity-100" />
+
+      {/* Icon */}
+
+      <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 text-3xl text-teal-400">
+        <Icon />
       </div>
-      <h3 className="text-xl font-bold mb-2 text-gray-100">{title}</h3>
-      <p className="text-gray-100">{description}</p>
+
+      {/* Title */}
+
+      <h3 className="mt-8 text-2xl font-bold text-white">{title}</h3>
+
+      {/* Description */}
+
+      <p className="mt-5 leading-8 text-slate-400">{description}</p>
+
+      {/* Bottom */}
+
+      <div className="mt-8 flex items-center gap-2 font-medium text-teal-400">
+        Learn More
+        <ArrowUpRight
+          size={18}
+          className="transition group-hover:translate-x-1 group-hover:-translate-y-1"
+        />
+      </div>
     </div>
   );
 }

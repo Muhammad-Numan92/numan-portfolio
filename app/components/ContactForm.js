@@ -3,6 +3,7 @@
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { Send } from "lucide-react";
 
 export default function ContactForm() {
   const {
@@ -17,32 +18,35 @@ export default function ContactForm() {
       const res = await axios.post("/api/send-email", data);
 
       if (res.data.success) {
-        toast.success("Inquiry sent successfully!");
+        toast.success("✅ Thanks! Your message has been sent successfully.");
+
         reset();
       } else {
-        toast.error("Failed to send inquiry.");
+        toast.error("Failed to send message.");
       }
     } catch (error) {
-      toast.error("An error occurred. Please try again.");
+      toast.error("Something went wrong. Please try again.");
     }
   };
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-gray-900 p-8 rounded-sm shadow-lg border border-teal-950"
+      className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <h3 className="mb-8 text-2xl font-bold text-white">Send Me a Message</h3>
+
+      <div className="grid gap-5 md:grid-cols-2">
         <div>
           <input
-            {...register("firstName", { required: "First name is required" })}
-            type="text"
+            {...register("firstName", {
+              required: "First name is required",
+            })}
             placeholder="First Name"
-            id="first-name-input"
-            className="p-3 rounded-sm w-full bg-gray-900 border border-teal-950 text-gray focus:border-teal-700 focus:outline-none"
+            className="w-full rounded-xl border border-white/10 bg-[#0B1120] p-4 text-white outline-none transition focus:border-teal-400"
           />
           {errors.firstName && (
-            <p className="text-red-500 text-sm mt-1">
+            <p className="mt-1 text-sm text-red-400">
               {errors.firstName.message}
             </p>
           )}
@@ -50,71 +54,63 @@ export default function ContactForm() {
 
         <div>
           <input
-            {...register("lastName", { required: "Last name is required" })}
-            type="text"
+            {...register("lastName", {
+              required: "Last name is required",
+            })}
             placeholder="Last Name"
-            className="p-3 rounded-sm w-full bg-gray-900 border border-teal-950 text-gray focus:border-teal-700 focus:outline-none"
+            className="w-full rounded-xl border border-white/10 bg-[#0B1120] p-4 text-white outline-none transition focus:border-teal-400"
           />
           {errors.lastName && (
-            <p className="text-red-500 text-sm mt-1">
+            <p className="mt-1 text-sm text-red-400">
               {errors.lastName.message}
             </p>
           )}
         </div>
       </div>
 
-      <div className="mb-4">
+      <div className="mt-5">
         <input
           {...register("email", {
             required: "Email is required",
-            pattern: {
-              value: /^\S+@\S+$/i,
-              message: "Enter a valid email address",
-            },
           })}
-          type="email"
-          placeholder="Email"
-          className="w-full p-3 rounded-sm bg-gray-900 border border-teal-950 text-gray focus:border-teal-700 focus:outline-none"
+          placeholder="Email Address"
+          className="w-full rounded-xl border border-white/10 bg-[#0B1120] p-4 text-white outline-none transition focus:border-teal-400"
         />
-        {errors.email && (
-          <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-        )}
       </div>
 
-      <div className="mb-4">
+      <div className="mt-5">
         <input
-          {...register("subject", { required: "Subject is required" })}
-          type="text"
+          {...register("subject", {
+            required: "Subject is required",
+          })}
           placeholder="Subject"
-          className="w-full p-3 rounded-sm bg-gray-900 border border-teal-950 text-gray focus:border-teal-700 focus:outline-none"
+          className="w-full rounded-xl border border-white/10 bg-[#0B1120] p-4 text-white outline-none transition focus:border-teal-400"
         />
-        {errors.subject && (
-          <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
-        )}
       </div>
 
-      <div className="mb-4">
+      <div className="mt-5">
         <textarea
-          {...register("message", { required: "Message is required" })}
-          rows="5"
-          placeholder="Write your message.."
-          className="w-full p-3 rounded-sm bg-gray-900 border border-teal-950 text-gray focus:border-teal-700 focus:outline-none"
-        ></textarea>
-        {errors.message && (
-          <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
-        )}
+          {...register("message", {
+            required: "Message is required",
+          })}
+          rows={6}
+          placeholder="Tell me about your project..."
+          className="w-full resize-none rounded-xl border border-white/10 bg-[#0B1120] p-4 text-white outline-none transition focus:border-teal-400"
+        />
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-gradient-to-r from-teal-700 to-teal-950 text-gray font-normal py-3 rounded-sm disabled:opacity-50"
+        className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-teal-500 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-teal-400 hover:shadow-lg hover:shadow-teal-500/30 disabled:opacity-50"
       >
-        {isSubmitting ? "Sending..." : "SEND INQUIRY"}
+        <Send size={18} />
+
+        {isSubmitting ? "Sending Message..." : "Send Message"}
       </button>
 
-      <p className="text-gray-400 text-center mt-4">
-        We&apos;ll get back to you within 24 hours.
+      <p className="mt-5 text-center text-sm text-slate-400">
+        I typically respond within 24 hours.
       </p>
     </form>
   );

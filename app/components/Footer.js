@@ -1,139 +1,153 @@
-// "use client";
-
-// import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
-
-// export default function Footer() {
-//   return (
-//     <footer className="bg-gray-900 text-white py-8 border-t border-t-teal-500/30">
-//       <div className="container mx-auto text-center">
-//         <p className="text-sm mb-5 text-gray-400">
-//           © {new Date().getFullYear()} Numan&apos;s Portfolio. All rights
-//           reserved.
-//         </p>
-//         <div className="flex justify-center space-x-6 mb-8">
-//           <a
-//             href="https://github.com/Numan-star"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="hover:text-teal-500 flex items-center space-x-2 transition-transform transform hover:scale-110"
-//           >
-//             <FaGithub className="w-6 h-6" />
-//             <span className="text-lg">GitHub</span>
-//           </a>
-//           <a
-//             href="https://linkedin.com/in/muhammad-numan-618a24241/"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="hover:text-teal-500 flex items-center space-x-2 transition-transform transform hover:scale-110"
-//           >
-//             <FaLinkedin className="w-6 h-6" />
-//             <span className="text-lg">LinkedIn</span>
-//           </a>
-//           <a
-//             href="mailto:numan.codes@gmail.com"
-//             className="hover:text-teal-500 flex items-center space-x-2 transition-transform transform hover:scale-110"
-//           >
-//             <FaEnvelope className="w-6 h-6" />
-//             <span className="text-lg">Contact</span>
-//           </a>
-//         </div>
-//         <div className="text-sm text-gray-400 mb-4">
-//           <p className="mb-2">
-//             Check out my projects, open-source contributions, and more on
-//             GitHub!
-//           </p>
-//           <p>Let&apos;s connect and collaborate to create amazing things.</p>
-//         </div>
-//         <div className="flex justify-center items-center">
-//           <a
-//             href="/Numan-Resume(updated).pdf"
-//             download
-//             className="flex items-center max-w-sm justify-center mt-4 py-2 px-6 bg-transparent hover:bg-teal-500 hover:text-black text-teal-700 border border-teal-700 font-semibold rounded-md transition-all duration-300 hover:scale-105"
-//           >
-//             <FaDownload className="mr-2 w-5 h-5" />
-//             Download Resume
-//           </a>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// }
-
 "use client";
 
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaDownload,
-  FaArrowUp,
-} from "react-icons/fa";
+import { Github, Linkedin, Mail, Download, ArrowUp, Heart } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
+  const links = [
+    {
+      title: "Experience",
+      href: "#experience",
+    },
+    {
+      title: "Projects",
+      href: "#projects",
+    },
+    {
+      title: "Expertise",
+      href: "#tech-stack",
+    },
+    {
+      title: "Contact",
+      href: "#contact",
+    },
+  ];
+
   return (
-    <footer className="bg-gray-900 text-white pt-8 pb-2 border-t border-t-teal-500/30">
-      <div className="container mx-auto text-center">
-        <p className="text-sm mb-5 text-gray-400">
-          © {new Date().getFullYear()} Numan&apos;s Portfolio. All rights
-          reserved.
-        </p>
-        <div className="flex justify-center space-x-6 mb-8">
-          <a
-            href="https://github.com/Numan-star"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-teal-500 flex items-center space-x-2 transition-transform transform hover:scale-110"
-          >
-            <FaGithub className="w-6 h-6" />
-            <span className="text-lg">GitHub</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/muhammad-numan-full-stack-dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-teal-500 flex items-center space-x-2 transition-transform transform hover:scale-110"
-          >
-            <FaLinkedin className="w-6 h-6" />
-            <span className="text-lg">LinkedIn</span>
-          </a>
-          <a
-            href="mailto:numan.codes@gmail.com"
-            className="hover:text-teal-500 flex items-center space-x-2 transition-transform transform hover:scale-110"
-          >
-            <FaEnvelope className="w-6 h-6" />
-            <span className="text-lg">Contact</span>
-          </a>
-        </div>
-        <div className="text-sm text-gray-400 mb-4">
-          <p className="mb-2">
-            Check out my projects, open-source contributions, and more on
-            GitHub!
-          </p>
-          <p>Let&apos;s connect and collaborate to create amazing things.</p>
-        </div>
-        <div className="flex justify-center items-center">
-          <a
-            href="/Numan-Resume(updated).pdf"
-            download
-            className="flex items-center max-w-sm justify-center mt-4 py-2 px-6 bg-transparent hover:bg-teal-500 hover:text-black text-teal-700 border border-teal-700 font-semibold rounded-md transition-all duration-300 hover:scale-105"
-          >
-            <FaDownload className="mr-2 w-5 h-5" />
-            Download Resume
-          </a>
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#050816]">
+      {/* Background */}
+
+      <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-teal-500/10 blur-[140px]" />
+
+      <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-cyan-500/10 blur-[140px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 py-16">
+        <div className="grid gap-12 lg:grid-cols-3">
+          {/* Left */}
+
+          <div>
+            <h2 className="text-3xl font-black text-white">
+              Muhammad{" "}
+              <span className="bg-gradient-to-r from-teal-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent">
+                Numan
+              </span>
+            </h2>
+
+            <p className="mt-3 text-lg font-medium text-teal-400">
+              Full Stack Developer
+            </p>
+
+            <p className="mt-6 max-w-md leading-8 text-slate-400">
+              Passionate about building scalable SaaS applications, enterprise
+              solutions, and modern web experiences using Laravel, Next.js,
+              Vue.js, and cloud technologies.
+            </p>
+
+            {/* Social */}
+
+            <div className="mt-8 flex gap-4">
+              <a
+                href="https://github.com/Numan-star"
+                target="_blank"
+                className="rounded-xl border border-white/10 bg-white/5 p-3 transition hover:border-teal-400 hover:text-teal-400"
+              >
+                <Github size={22} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/muhammad-numan-full-stack-dev/"
+                target="_blank"
+                className="rounded-xl border border-white/10 bg-white/5 p-3 transition hover:border-teal-400 hover:text-teal-400"
+              >
+                <Linkedin size={22} />
+              </a>
+
+              <a
+                href="mailto:numan.codes@gmail.com"
+                className="rounded-xl border border-white/10 bg-white/5 p-3 transition hover:border-teal-400 hover:text-teal-400"
+              >
+                <Mail size={22} />
+              </a>
+
+              <a
+                href="/Numan-Resume(updated).pdf"
+                download
+                className="rounded-xl border border-white/10 bg-white/5 p-3 transition hover:border-teal-400 hover:text-teal-400"
+              >
+                <Download size={22} />
+              </a>
+            </div>
+          </div>
+
+          {/* Center */}
+
+          <div>
+            <h3 className="text-xl font-bold text-white">Quick Links</h3>
+
+            <div className="mt-6 flex flex-col gap-4">
+              {links.map((link) => (
+                <a
+                  key={link.title}
+                  href={link.href}
+                  className="text-slate-400 transition hover:translate-x-2 hover:text-teal-400"
+                >
+                  {link.title}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Right */}
+
+          <div>
+            <h3 className="text-xl font-bold text-white">
+              Let's Build Something Great
+            </h3>
+
+            <p className="mt-6 leading-8 text-slate-400">
+              I'm currently available for freelance projects, full-time
+              opportunities, and exciting collaborations.
+            </p>
+
+            <a
+              href="mailto:numan.codes@gmail.com"
+              className="mt-8 inline-flex rounded-xl bg-gradient-to-r from-teal-500 to-cyan-500 px-7 py-3 font-semibold text-white transition hover:scale-105"
+            >
+              Get In Touch
+            </a>
+          </div>
         </div>
 
-        {/* Scroll to top arrow */}
-        <div className="flex justify-end m-0">
+        {/* Bottom */}
+
+        <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
+          <p className="flex items-center gap-2 text-slate-500">
+            © {new Date().getFullYear()} Muhammad Numan. Built with Next.js &
+            Tailwind CSS
+            <Heart size={16} className="fill-red-500 text-red-500" />
+          </p>
+
           <button
             onClick={scrollToTop}
-            className="mt-0 mr-2 md:mr-10 flex items-end justify-end bg-teal-600 text-white p-2 rounded-full hover:bg-teal-500 transition-all duration-300"
-            aria-label="Scroll to top"
+            className="rounded-full border border-white/10 bg-white/5 p-4 transition hover:-translate-y-1 hover:border-teal-400 hover:bg-teal-500 hover:text-white"
           >
-            <FaArrowUp className="w-5 h-5" />
+            <ArrowUp size={20} />
           </button>
         </div>
       </div>

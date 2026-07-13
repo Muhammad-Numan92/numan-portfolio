@@ -1,80 +1,91 @@
-"use client"; // This line makes this component a Client Component
+"use client";
 
-// app/components/Services.js
 import ServiceCard from "./ServiceCard";
 
 import { FaCode } from "react-icons/fa6";
+
 import { HiOutlineDesktopComputer } from "react-icons/hi";
+
 import { HiOutlineShoppingBag } from "react-icons/hi2";
+
 import { LuFileSearch } from "react-icons/lu";
+
 import { IoSettingsOutline } from "react-icons/io5";
+
 import { VscTools } from "react-icons/vsc";
 
-export default function Services() {
-  // Array of services to be displayed
-  const services = [
-    {
-      icon: FaCode,
-      title: "Web Development",
-      description:
-        "I build secure and scalable web applications using Laravel, MySQL, and modern frontend frameworks like Vue.js and Next.js. From authentication systems to RESTful APIs, I ensure clean architecture and full-stack functionality.",
-    },
-    {
-      icon: HiOutlineDesktopComputer,
-      title: "Responsive Frontend Design",
-      description:
-        "I design responsive, mobile-first interfaces using Vue.js, Tailwind CSS, HTML, and JavaScript. Your application will look great and function seamlessly across all devices with component-based UI and optimized styling.",
-    },
-    {
-      icon: HiOutlineShoppingBag,
-      title: "E-commerce Development",
-      description:
-        "I develop robust e-commerce platforms with features like product management, order processing, and secure payment integration using third-party APIs like Stripe. I ensure a smooth shopping experience from cart to checkout.",
-    },
-    {
-      icon: LuFileSearch,
-      title: "CMS & Admin Panels",
-      description:
-        "I build custom CMS and admin panels using Laravel and MySQL, allowing you to manage users, content, and settings with ease. These dashboards are styled using Tailwind CSS for a clean and professional UI.",
-    },
-    {
-      icon: IoSettingsOutline,
-      title: "Custom Web Applications",
-      description:
-        "From CRM systems to workflow automation tools, I create custom web applications tailored to your business needs. I integrate third-party APIs such as Twilio for messaging and Google Maps for location-based features.",
-    },
-    {
-      icon: VscTools,
-      title: "Website Maintenance & Optimization",
-      description:
-        "I provide ongoing support to keep your application fast, secure, and up-to-date. This includes performance optimization, regular backups, bug fixes, security updates, and third-party service monitoring.",
-    },
-  ];
+const services = [
+  {
+    icon: FaCode,
+    title: "Web Development",
+    description:
+      "Modern, scalable web applications using Laravel, Next.js and REST APIs.",
+  },
+  {
+    icon: HiOutlineDesktopComputer,
+    title: "Frontend Development",
+    description:
+      "Responsive, pixel-perfect interfaces with React, Vue.js and Tailwind CSS.",
+  },
+  {
+    icon: HiOutlineShoppingBag,
+    title: "E-Commerce Solutions",
+    description:
+      "Complete online stores with Stripe, secure checkout and order management.",
+  },
+  {
+    icon: LuFileSearch,
+    title: "Admin Dashboards",
+    description:
+      "Custom CMS and management panels with clean UI and analytics.",
+  },
+  {
+    icon: IoSettingsOutline,
+    title: "Business Applications",
+    description:
+      "CRM, ERP and workflow automation systems tailored for your business.",
+  },
+  {
+    icon: VscTools,
+    title: "Maintenance & Support",
+    description:
+      "Performance optimization, security updates and long-term maintenance.",
+  },
+];
 
+export default function Services() {
   return (
-    <section className="bg-gray-900 py-16 border-t border-t-teal-500/20">
-      {/* py-10 text-white bg-gray-900 border-t sm:py-14 lg:py-20 border-t-teal-500/20 */}
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-center mb-10 text-gray-100">
-          Our{" "}
-          <span className="bg-gradient-to-r from-teal-500 via-gray-300 to-pink-600 bg-clip-text text-transparent">
-            Services
+    <section
+      id="services"
+      className="relative overflow-hidden bg-[#0B1120] py-24"
+    >
+      {/* Glow */}
+      <div className="absolute left-0 top-0 h-80 w-80 rounded-full bg-teal-500/10 blur-[130px]" />
+
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto mb-20 max-w-3xl text-center">
+          <span className="rounded-full border border-teal-500/20 bg-teal-500/10 px-4 py-2 text-sm font-medium uppercase tracking-widest text-teal-400">
+            What I Do
           </span>
-        </h2>
-        <p className="text-gray-100 text-xl max-w-2xl mx-auto mb-10">
-          Discover our tailored digital solutions—ranging from web application
-          development, responsive frontend design, and RESTful API integration
-          to ongoing backend maintenance and performance optimization. Let’s
-          build scalable, secure, and impactful digital experiences together.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-            />
+
+          <h2 className="mt-6 text-4xl font-extrabold text-white lg:text-5xl">
+            Crafting Modern
+            <span className="bg-gradient-to-r from-cyan-300 via-teal-400 to-blue-500 bg-clip-text text-transparent">
+              {" "}
+              Digital Solutions
+            </span>
+          </h2>
+
+          <p className="mt-6 text-lg leading-8 text-slate-400">
+            I specialize in designing and developing modern, scalable and
+            user-focused web applications using Laravel, React, Vue.js, Next.js
+            and cloud-ready technologies.
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {services.map((service) => (
+            <ServiceCard key={service.title} {...service} />
           ))}
         </div>
       </div>
