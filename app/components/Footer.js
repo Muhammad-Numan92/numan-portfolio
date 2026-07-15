@@ -117,11 +117,11 @@ export default function Footer() {
 
           <div>
             <h3 className="text-xl font-bold text-white">
-              Let's Build Something Great
+              Let&apos;s Build Something Great
             </h3>
 
             <p className="mt-6 leading-8 text-slate-400">
-              I'm currently available for freelance projects, full-time
+              I&apos;m currently available for freelance projects, full-time
               opportunities, and exciting collaborations.
             </p>
 

@@ -135,7 +135,7 @@ export default function ProjectsSection() {
           <p className="mt-6 text-lg leading-8 text-slate-400">
             A collection of production-ready SaaS applications, healthcare
             systems, OCR automation platforms, payment solutions and enterprise
-            software that I've designed and developed.
+            software that I&apos;ve designed and developed.
           </p>
         </div>
 

@@ -94,7 +94,7 @@ export default function ExperienceSection() {
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-400">
-            Over the last 3+ years, I've built production-ready SaaS
+            Over the last 3+ years, I&apos;ve built production-ready SaaS
             applications, payment systems, REST APIs, and modern web experiences
             for startups and businesses.
           </p>

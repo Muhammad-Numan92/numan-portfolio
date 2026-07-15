@@ -63,7 +63,7 @@ export default function HeroSection() {
         {/* LEFT */}
         <div className="w-full text-center lg:w-1/2 lg:text-left">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[6px] text-teal-400">
-            Hello, I'm
+            Hello, I&apos;m
           </p>
 
           <h1 className="text-5xl font-black leading-none text-white sm:text-6xl md:text-7xl lg:text-8xl">

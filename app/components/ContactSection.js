@@ -25,7 +25,7 @@ export default function ContactSection() {
           </span>
 
           <h2 className="mt-6 text-4xl font-extrabold text-white lg:text-5xl">
-            Let's Build Something
+            Let&apos;s Build Something
             <span className="bg-gradient-to-r from-cyan-300 via-teal-400 to-blue-500 bg-clip-text text-transparent">
               {" "}
               Amazing Together
@@ -33,8 +33,9 @@ export default function ContactSection() {
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-400">
-            Have a project in mind or looking for a Full Stack Developer? Let's
-            discuss your ideas and turn them into powerful digital solutions.
+            Have a project in mind or looking for a Full Stack Developer?
+            Let&apos;s discuss your ideas and turn them into powerful digital
+            solutions.
           </p>
         </div>
 
