@@ -5,6 +5,8 @@ import { ToastContainer } from "react-toastify";
 import CustomCursor from "./components/CustomCursor";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Developer Numan - Software Engineer & Web Developer",
@@ -18,7 +20,11 @@ export const metadata = {
     description:
       "Creating stellar web experiences using the latest technologies like Laravel, Next.js, and React.",
     url: "https://developernuman.vercel.app/",
-    image: "https://developernuman.vercel.app/numan.jpeg",
+    images: [
+      {
+        url: "https://developernuman.vercel.app/numan.jpeg",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -26,12 +32,11 @@ export const metadata = {
     title: "Developer Numan - Software Engineer",
     description:
       "Skilled in Laravel, Next.js, and React, delivering top-notch web experiences.",
-    image: "https://developernuman.vercel.app/numan.jpeg",
+    images: ["https://developernuman.vercel.app/numan.jpeg"],
   },
   verification: {
     google: "onII4hxxp8M1XmPi1go7juM5FTCXugQWkFdy7F5i4cU",
   },
-  canonical: "https://developernuman.vercel.app/",
 };
 
 export default function Layout({ children }) {
@@ -43,6 +48,12 @@ export default function Layout({ children }) {
         <main className="bg-gray-900">{children}</main>
         <Footer />
         <ToastContainer position="top-right" autoClose={3000} theme="dark" />
+
+        {/* Vercel Analytics */}
+        <Analytics />
+
+        {/* Vercel Speed Insights */}
+        <SpeedInsights />
       </body>
     </html>
   );
