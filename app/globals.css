@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (pointer: fine) {
+  html,
+  body,
+  * {
+    cursor: none;
+  }
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  cursor: none;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -86,4 +102,17 @@ body {
   100% {
     transform: translateX(-100%);
   }
+}
+
+@keyframes gradient {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: 300% center;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 6s linear infinite;
 }

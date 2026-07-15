@@ -2,6 +2,7 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ToastContainer } from "react-toastify";
+import CustomCursor from "./components/CustomCursor";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 
@@ -37,6 +38,7 @@ export default function Layout({ children }) {
   return (
     <html lang="en">
       <body className="bg-gray-900">
+        <CustomCursor />
         <Header />
         <main className="bg-gray-900">{children}</main>
         <Footer />

@@ -13,14 +13,40 @@ const roles = [
 
 export default function HeroSection() {
   const [currentRole, setCurrentRole] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 2500);
+    const currentText = roles[currentRole];
 
-    return () => clearInterval(timer);
-  }, []);
+    let timeout;
+
+    if (!isDeleting) {
+      // Typing
+      if (displayText.length < currentText.length) {
+        timeout = setTimeout(() => {
+          setDisplayText(currentText.slice(0, displayText.length + 1));
+        }, 50);
+      } else {
+        // Pause before deleting
+        timeout = setTimeout(() => {
+          setIsDeleting(true);
+        }, 1500);
+      }
+    } else {
+      // Deleting
+      if (displayText.length > 0) {
+        timeout = setTimeout(() => {
+          setDisplayText(currentText.slice(0, displayText.length - 1));
+        }, 50);
+      } else {
+        setIsDeleting(false);
+        setCurrentRole((prev) => (prev + 1) % roles.length);
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, currentRole]);
 
   return (
     <section id="about" className="relative overflow-hidden bg-[#050816]">
@@ -43,18 +69,27 @@ export default function HeroSection() {
           <h1 className="text-5xl font-black leading-none text-white sm:text-6xl md:text-7xl lg:text-8xl">
             Muhammad
             <br />
-            <span className="bg-gradient-to-r from-cyan-300 via-teal-400 to-blue-500 bg-clip-text text-transparent">
+            <span
+              className="
+                bg-[linear-gradient(90deg,#ccfbf1,#99f6e4,#5eead4,#2dd4bf,#14b8a6,#0d9488,#0f766e,#0d9488,#14b8a6,#2dd4bf,#5eead4,#99f6e4,#ccfbf1)]
+                bg-[length:300%_100%]
+                bg-clip-text
+                text-transparent
+                animate-gradient
+                "
+            >
               Numan
             </span>
           </h1>
 
-          <div className="mt-8 inline-flex rounded-full border border-teal-500/20 bg-white/5 px-5 py-3 backdrop-blur-xl">
-            <span className="text-lg font-semibold text-teal-300 sm:text-xl lg:text-2xl">
-              {roles[currentRole]}
+          <div className="mt-8 inline-flex">
+            <span className="text-lg font-bold text-teal-300 sm:text-2xl lg:text-3xl">
+              {displayText}
+              <span className="animate-pulse">|</span>
             </span>
           </div>
 
-          <p className="mx-auto mt-8 max-w-xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8 lg:mx-0">
+          <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8 lg:mx-0">
             Results-driven{" "}
             <span className="font-semibold text-white">
               Full Stack Developer
